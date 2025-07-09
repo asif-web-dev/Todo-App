@@ -29,7 +29,7 @@ setTodos ((prev) => prev.map((prevTodo) => prevTodo.id  === id ?{...prevTodo,  c
 
 
 useEffect( () => {
-const todos = JSON.parse(localStorage.getItem('todos'))
+const todos = JSON.parse(sessionStorage.getItem('todos'))
 
 if(todos && todos.length >0){
   setTodos(todos)
@@ -37,7 +37,7 @@ if(todos && todos.length >0){
 },[])
 
 useEffect(() => {
-localStorage.setItem('todos', JSON.stringify(todos))
+sessionStorage.setItem('todos', JSON.stringify(todos))
 },[todos])
 
 
